@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de origem</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+
+        }
+        div#res{
+            font: optional 14pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>País de origem</h1>
+    Informe o país que nasceu: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="apurar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function apurar() {
+            var txtps = window.document.getElementById('txtpais')
+            var res = window.document.querySelector('div#res')
+            var ps = txtps.value
+            res.innerHTML = `Você nasceu no ${ps}.<br>`
+            if (ps.toUpperCase(ps) !== 'BRASIL') {
+                res.innerHTML += 'Você é estrangeiro.<br>'
+            }
+            res.innerHTML += 'Você está no Brasil.'
+        }
+    </script>
+</body>
+</html>
